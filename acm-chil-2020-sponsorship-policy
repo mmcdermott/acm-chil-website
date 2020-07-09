@@ -1,0 +1,346 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+    <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <title>ACM-CHIL: Sponsorship</title>
+    
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acm_92x192.png"
+             height="auto"
+             width="50px"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACM-CHIL 2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item active">
+              <a class="nav-link" href="register.html">Registration</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="calendar.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="chat.html">Chat</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="committee.html">Committee</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="call_papers.html">Call for Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Tabs -->
+      <div class="tabs">
+        
+
+<ul class="nav nav-pills justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link text-muted" href="register.html">Registration</a>
+  </li>
+<!--   <li class="nav-item">
+    <a class="nav-link text-muted" href="register.html#tab-support">Financial support</a>
+  </li> -->
+  <li class="nav-item active">
+    <a
+      class="nav-link text-muted active"
+      data-toggle="tab"
+      href="#tab-register"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >Sponsorship
+    </a>
+  </li>
+</ul>
+
+
+
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Sponsorship</h2>
+  </div>
+</div>
+
+<p>Financial support ensures that ACM CHIL remains accessible to a broad set of participants by offseting the expenses involved in participation. We follow best practices in other ACM conferences to maintain a transparent and appropriate relationship with our funders:</p>
+
+<ol>
+<li>The substance and structure of the conference are determined independently by the program committees.</li>
+<li>All papers are chosen through a rigorous, double-blind peer review process, where authors disclose conflicts of interest.</li>
+<li>All sources of financial support are acknowledged.</li>
+<li>Benefits are publicly disclosed below.</li>
+<li>Corporate sponsors cannot specify how contributions are spent.</li>
+<li>All attendees will be expected to follow the ACM Code of Conduct.</li>
+</ol>
+
+<div class="row p-3">
+  <div class="bd-content">
+    <h3>2020 Levels of Sponsorship</h3>
+  </div>
+</div>
+
+<p>Sponsorship of the annual ACM Conference on Health, Inference and Learning (CHIL) contributes to furthering research and interdisciplinary dialogue around machine learning and health. We deeply appreciate any amount of support your company or foundation can provide.</p>
+
+<div class="row p-3">
+  <div class="bd-content">
+    <h4>$75,000 USD</h4>
+  </div>
+</div>
+
+<ul>
+<li>Sponsor Remarks</li>
+<li>Company signage displayed at event opening through closing</li>
+<li>Can provide company or foundation swag for conference goodie bags</li>
+<li>Access to an opt-in database of attendees</li>
+<li>Booth at conference event (all days)</li>
+<li>Verbal acknowledgment of contribution in the opening and closing remarks of the conference (a single track session attended by all participants)</li>
+<li>Free registration for up to 5 attendees from your organization </li>
+<li>Company or foundation name and logo on website with link</li>
+<li>Logo and thanks on all communications to all attendees</li>
+</ul>
+
+<div class="row p-3">
+  <div class="bd-content">
+    <h4>$50,000 USD</h4>
+  </div>
+</div>
+
+<ul>
+<li>Can provide company or foundation swag for conference goodie bags</li>
+<li>Access to an opt-in database of attendees</li>
+<li>Booth at conference event (all days)</li>
+<li>Verbal acknowledgment of contribution in the opening and closing remarks of the conference (a single track session attended by all participants)</li>
+<li>Free registration for up to 3 attendees from your organization participants)</li>
+<li>Company or foundation name and logo on website with link</li>
+<li>Logo and thanks on all communications to all attendees </li>
+</ul>
+
+<div class="row p-3">
+  <div class="bd-content">
+    <h4>$25,000 USD</h4>
+  </div>
+</div>
+
+<ul>
+<li>Booth at conference event (all days)</li>
+<li>Verbal acknowledgment of contribution in the opening and closing remarks of the conference (a single track session attended by all participants)</li>
+<li>Free registration for up to 2 attendees from your organization participants)</li>
+<li>Company or foundation name and logo on website with link</li>
+<li>Logo and thanks on all communications to all attendees</li>
+</ul>
+
+<div class="row p-3">
+  <div class="bd-content">
+    <h4>$10,000 USD</h4>
+  </div>
+</div>
+
+<ul>
+<li>Verbal acknowledgment of contribution in the opening and closing remarks of the conference (a single track session attended by all participants)</li>
+<li>Free registration for up to 1 attendee from your organization</li>
+<li>Company or foundation name and logo on website with link</li>
+<li>Logo and thanks on all communications to all attendees</li>
+<li>No booth space</li>
+</ul>
+
+<div class="row p-3">
+  <div class="bd-content">
+    <h4>$5,000 USD</h4>
+  </div>
+</div>
+
+<ul>
+<li>Company or foundation name and logo on website with link</li>
+<li>Logo and thanks on all communications to all attendees</li>
+<li>No booth space</li>
+</ul>
+
+<div class="row p-3">
+  <div class="bd-content">
+    <h3>Sponsorship Chairs</h3>
+  </div>
+</div>
+
+<ul>
+<li>Dr. Joyce Ho, Emory University</li>
+<li>Dr. Laura Rosella, University of Toronto</li>
+</ul>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Sponsors</h2>
+  </div>
+</div>
+
+<img width="2500" height="778" src="static/images/sponsors/sponsor_logos_chil1.png" class="image attachment-full size-full" alt="" style="max-width: 100%; height: auto;" title="Sponsors" srcset="static/images/sponsors/sponsor_logos_chil1.png 2500w, static/images/sponsors/sponsor_logos_chil1-300x93.png 300w, static/images/sponsors/sponsor_logos_chil1-768x239.png 768w, static/images/sponsors/sponsor_logos_chil1-1024x319.png 1024w, static/images/sponsors/sponsor_logos_chil1-600x187.png 600w" sizes="(max-width: 2500px) 100vw, 2500px" />
+
+      </div>
+
+      <div class="container p-5">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-left">© 2020 ACM-CHIL Organization Committee</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

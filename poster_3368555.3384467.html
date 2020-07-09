@@ -1,0 +1,402 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+    <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <title>ACM-CHIL: Extracting medical entities from social media</title>
+    
+<meta name="citation_title" content="Extracting medical entities from social media" />
+
+<meta name="citation_author" content="Sanja Scepanovic" />
+
+<meta name="citation_author" content="Enrique Martin-Lopez" />
+
+<meta name="citation_author" content="Daniele Quercia" />
+
+<meta name="citation_author" content="Khan Baykaner" />
+
+<meta name="citation_publication_date" content="July 2020" />
+<meta name="citation_conference_title" content="Acm Conference On Health, Inference, And Learning" />
+<meta name="citation_inbook_title" content="Proceedings of ACM-CHIL 2020" />
+<meta name="citation_abstract" content="Accurately extracting medical entities from social media is challenging because people use informal language with different expressions for the same concept, and they also make spelling mistakes. Previous work either focused on specific diseases (e.g., depression) or drugs (e.g., opioids) or, if working with a wide-set of medical entities, only tackled individual and small-scale benchmark datasets (e.g., AskaPatient). In this work, we first demonstrated how to accurately extract a wide variety of medical entities such as symptoms, diseases, and drug names on three benchmark datasets from varied social media sources, and then also validated this approach on a large-scale Reddit dataset.We first implemented a deep-learning method using contextual embeddings that upon two existing benchmark datasets, one containing annotated AskaPatient posts (CADEC) and the other containing annotated tweets (Micromed), outperformed existing state-of-the-art methods. Second, we created an additional benchmark dataset by annotating medical entities in 2K Reddit posts (made publicly available under the name of MedRed) and showed that our method also performs well on this new dataset.Finally, to demonstrate that our method accurately extracts a wide variety of medical entities on a large scale, we applied the model pre-trained on MedRed to half a million Reddit posts. The posts came from disease-specific subreddits so we could categorise them into 18 diseases based on the subreddit. We then trained a machine-learning classifier to predict the post&#39;s category solely from the extracted medical entities. The average F1 score across categories was .87. These results open up new cost-effective opportunities for modeling, tracking and even predicting health behavior at scale." />
+
+<meta name="citation_keywords" content="Applied computing" />
+
+<meta name="citation_keywords" content="Life and medical sciences" />
+
+<meta name="citation_keywords" content="Health informatics" />
+
+<meta name="citation_keywords" content="Computing methodologies" />
+
+<meta name="citation_keywords" content="Artificial intelligence" />
+
+<meta name="citation_keywords" content="Natural language processing" />
+
+<meta name="citation_pdf_url" content="https://dl.acm.org/doi/pdf/10.1145/3368555.3384467" />
+
+
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acm_92x192.png"
+             height="auto"
+             width="50px"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACM-CHIL 2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="register.html">Registration</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="calendar.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="chat.html">Chat</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="committee.html">Committee</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="call_papers.html">Call for Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Tabs -->
+      <div class="tabs">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<!-- Title -->
+<div class="pp-card m-3" style="">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="">
+      Extracting medical entities from social media
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      
+      <a href="papers.html?filter=authors&search=Sanja Scepanovic" class="text-muted"
+        >Sanja Scepanovic</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Enrique Martin-Lopez" class="text-muted"
+        >Enrique Martin-Lopez</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Daniele Quercia" class="text-muted"
+        >Daniele Quercia</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Khan Baykaner" class="text-muted"
+        >Khan Baykaner</a
+      >
+      
+    </h3>
+    <p class="card-text text-center">
+      <span class="">Keywords:</span>
+      
+      <a
+        href="papers.html?filter=keywords&search=Applied computing"
+        class="text-secondary text-decoration-none"
+        >Applied computing</a
+      >,
+      
+      <a
+        href="papers.html?filter=keywords&search=Life and medical sciences"
+        class="text-secondary text-decoration-none"
+        >Life and medical sciences</a
+      >,
+      
+      <a
+        href="papers.html?filter=keywords&search=Health informatics"
+        class="text-secondary text-decoration-none"
+        >Health informatics</a
+      >,
+      
+      <a
+        href="papers.html?filter=keywords&search=Computing methodologies"
+        class="text-secondary text-decoration-none"
+        >Computing methodologies</a
+      >,
+      
+      <a
+        href="papers.html?filter=keywords&search=Artificial intelligence"
+        class="text-secondary text-decoration-none"
+        >Artificial intelligence</a
+      >,
+      
+      <a
+        href="papers.html?filter=keywords&search=Natural language processing"
+        class="text-secondary text-decoration-none"
+        >Natural language processing</a
+      >
+      
+    </p>
+    <div class="text-center p-3">
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      <a class="card-link" target="_blank" href="https://dl.acm.org/doi/pdf/10.1145/3368555.3384467">
+        View Full Paper (PDF)
+      </a>
+      <a class="card-link" target="_blank" href="http://dx.doi.org/10.1145/3368555.3384467">
+        View Full Paper (HTML)
+      </a>
+      
+    </div>
+  </div>
+</div>
+<div id="details" class="pp-card m-3 collapse">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        <span class="font-weight-bold">Abstract:</span>
+        Accurately extracting medical entities from social media is challenging because people use informal language with different expressions for the same concept, and they also make spelling mistakes. Previous work either focused on specific diseases (e.g., depression) or drugs (e.g., opioids) or, if working with a wide-set of medical entities, only tackled individual and small-scale benchmark datasets (e.g., AskaPatient). In this work, we first demonstrated how to accurately extract a wide variety of medical entities such as symptoms, diseases, and drug names on three benchmark datasets from varied social media sources, and then also validated this approach on a large-scale Reddit dataset.We first implemented a deep-learning method using contextual embeddings that upon two existing benchmark datasets, one containing annotated AskaPatient posts (CADEC) and the other containing annotated tweets (Micromed), outperformed existing state-of-the-art methods. Second, we created an additional benchmark dataset by annotating medical entities in 2K Reddit posts (made publicly available under the name of MedRed) and showed that our method also performs well on this new dataset.Finally, to demonstrate that our method accurately extracts a wide variety of medical entities on a large scale, we applied the model pre-trained on MedRed to half a million Reddit posts. The posts came from disease-specific subreddits so we could categorise them into 18 diseases based on the subreddit. We then trained a machine-learning classifier to predict the post&#39;s category solely from the extracted medical entities. The average F1 score across categories was .87. These results open up new cost-effective opportunities for modeling, tracking and even predicting health behavior at scale.
+      </div>
+    </div>
+    <p></p>
+  </div>
+</div>
+
+<!-- <h5 style="color: red;">
+  Add content for posters. This could be a video, embedded pdf, chat room ....
+</h5> -->
+
+<!-- Chat -->
+<!-- <div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Chat</h2>
+  </div>
+</div>
+
+<div class="col-md-12 col-xs-12 p-2">
+  <div id="gitter" class="slp">
+    <center>
+      <iframe frameborder="0" src="https://chat.chilconference.org/channel/paper_3368555.3384467?layout=embedded" height="700px" width="100%" ></iframe>
+    </center>
+  </div>
+</div> -->
+
+<!-- Slides Live-->
+
+<!-- <div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Example SlidesLive</h2>
+  </div>
+</div>
+
+<div class="col-md-12 col-xs-12 my-auto p-2" >
+  <div id="presentation-embed" class="slp my-auto"></div>
+  <script src='https://slideslive.com/embed_presentation.js'></script>
+  <script>
+    embed = new SlidesLiveEmbed('presentation-embed', {
+    presentationId: '38922815',
+    autoPlay: false, // change to true to autoplay the embedded presentation
+    verticalEnabled: true,
+    verticalWhenWidthLte: 500,
+    allowHiddenControlsWhenPaused: true,
+    hideTitle: true
+    });
+  </script>
+</div>
+ -->
+
+<!-- Chat -->
+
+<!-- <div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Example Poster</h2>
+  </div>
+</div> -->
+
+<div role="main" id="pdf_view"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+<script src="static/js/pdf_render.js"></script>
+<script>
+    $(document).ready(() => {
+        // render first page of PDF to div
+        // PDF name can be bound to variable -- e.g. paper.content.poster_link
+        initPDFViewer("static/pdf/3368555.3384467.pdf",'#pdf_view');
+    })
+</script>
+
+
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Sponsors</h2>
+  </div>
+</div>
+
+<img width="2500" height="778" src="static/images/sponsors/sponsor_logos_chil1.png" class="image attachment-full size-full" alt="" style="max-width: 100%; height: auto;" title="Sponsors" srcset="static/images/sponsors/sponsor_logos_chil1.png 2500w, static/images/sponsors/sponsor_logos_chil1-300x93.png 300w, static/images/sponsors/sponsor_logos_chil1-768x239.png 768w, static/images/sponsors/sponsor_logos_chil1-1024x319.png 1024w, static/images/sponsors/sponsor_logos_chil1-600x187.png 600w" sizes="(max-width: 2500px) 100vw, 2500px" />
+
+      </div>
+
+      <div class="container p-5">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-left">© 2020 ACM-CHIL Organization Committee</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

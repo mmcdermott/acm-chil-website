@@ -1,0 +1,2201 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+    <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <title>ACM-CHIL: Schedule</title>
+    
+<script src="https://cdn.jsdelivr.net/npm/ical.js@1.4.0/build/ical.min.js" integrity="sha256-iFbWWsVYU6rIgbq5wJc4mp8zvV3SkqupxgH/7a9PanY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.26.0/dist/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.31/builds/moment-timezone-with-data-10-year-range.min.js" integrity="sha256-Dx3P9LwbB/WuS+7Xv37Y+qcPS/14AwFH653Pw80AOhY=" crossorigin="anonymous"></script>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.jsdelivr.net/npm/tui-calendar@1/dist/tui-calendar.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/tui-code-snippet@1.5.2/dist/tui-code-snippet.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tui-dom@3.0.0/dist/tui-dom.min.js" integrity="sha256-Ha3QUAK/d/Z2BMN/hDoBjwP0Q0f5uS9MploTRSLqrLI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/tui-calendar@1/dist/tui-calendar.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.10/dist/css/bootstrap-select.min.css"
+/>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.10/dist/js/bootstrap-select.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+<script src="static/js/lazy_load.js"></script>
+<script src="static/js/little_helpers.js"></script>
+<script type="text/javascript" src="static/js/calendar.js"></script>
+
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acm_92x192.png"
+             height="auto"
+             width="50px"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACM-CHIL 2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="register.html">Registration</a>
+            </li>
+            
+            <li class="nav-item active">
+              <a class="nav-link" href="calendar.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="chat.html">Chat</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="committee.html">Committee</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="call_papers.html">Call for Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Tabs -->
+      <div class="tabs">
+        
+<ul class="nav nav-pills justify-content-center">
+  
+  <li class="nav-item">
+    <a
+      class="nav-link active text-muted "
+      data-toggle="tab"
+      href="#tab-calendar"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >Calendar
+    </a>
+  </li>
+  
+  <li class="nav-item">
+    <a
+      class="nav-link  text-muted "
+      data-toggle="tab"
+      href="#tab-thu"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >Thursday
+    </a>
+  </li>
+  
+  <li class="nav-item">
+    <a
+      class="nav-link  text-muted "
+      data-toggle="tab"
+      href="#tab-fri"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >Friday
+    </a>
+  </li>
+  
+  <li class="nav-item">
+    <a
+      class="nav-link  text-muted "
+      data-toggle="tab"
+      href="#tab-preview"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >Recommended Viewing
+    </a>
+  </li>
+  
+  <li class="nav-item">
+    <a
+      class="nav-link  text-muted "
+      data-toggle="tab"
+      href="#tab-keynote"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >Keynotes
+    </a>
+  </li>
+  
+  <li class="nav-item">
+    <a
+      class="nav-link  text-muted "
+      data-toggle="tab"
+      href="#tab-tutorial"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >Tutorials
+    </a>
+  </li>
+  
+</ul>
+
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+  <!-- Calender tab -->
+  <div
+    class="tab-pane active"
+    id="tab-calendar"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    <div class="form-group col">
+      <label for="tzOptions">Timezone:</label>
+      <select id="tzOptions" class="selectpicker" data-live-search="true">
+      </select>
+    </div>
+
+    <!-- full cal for browser-->
+    <div id="calendar" class="d-none d-sm-block"></div>
+
+    <!-- small cal for smart phones-->
+    <div id="calendar_small" class="d-sm-none"></div>
+
+    <script type="text/javascript">
+      make_cal("serve_main_calendar.json");
+    </script>
+  </div>
+
+  <!-- Keynote Tab -->
+  <div
+    class="tab-pane fade"
+    id="tab-keynote"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    <div id="keynote">
+      <!-- Speakers -->
+      <div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Keynote speakers</h2>
+  </div>
+</div>
+      <div class="speakers">
+        
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/speakers/yoshua_bengio.png" width="100%" class="img-thumbnail" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h3>
+                <a href="speaker_1.html" class="main-title">
+                  Machine Learning Challenges in the Fight for Social Good - the Covid-19 Case
+                </a>
+              </h3>
+            </div>
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Yoshua Bengio  /  University of Montreal
+              </span>
+            </div>
+            <div class="m-3">
+              Yoshua Bengio is Full Professor in the computer science and operations research department at U. Montreal, scientific director of Mila and of IVADO, and Canada Research Chair in Statistical Learning Algorithms. He pioneered deep learning and has been getting the most citations per day in 2018 among all computer scientists, worldwide. He is officer of the Order of Canada, member of the Royal Society of Canada, was awarded the Marie-Victorin Prize and the Radio-Canada Scientist of the year in 2017, and he is a member of the NIPS board and co-founder and general chair for the ICLR conference, as well as program director of the CIFAR program on Learning in Machines and Brains.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/speakers/elaine_nsoesie.jpg" width="100%" class="img-thumbnail" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h3>
+                <a href="speaker_2.html" class="main-title">
+                  Digital Platforms &amp; Public Health in Africa
+                </a>
+              </h3>
+            </div>
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Elaine Nsoesie  /  Boston University
+              </span>
+            </div>
+            <div class="m-3">
+              Dr. Nsoesie is an Assistant Professor of Global Health at Boston University (BU) School of Public Health. She is also a BU Data Science Faculty Fellow as part of the BU Data Science Initiative at the Hariri Institute for Computing and a Data and Innovation Fellow at The Directorate of Science, Technology and Innovation (DSTI) in the Office of the President in Sierra Leone. Dr. Nsoesie applies data science methodologies to global health problems, using digital data and technology to improve health, particularly in the realm of surveillance of chronic and infectious diseases. She has worked with local public health departments in the United States and international organizations. She completed her postdoctoral studies at Harvard Medical School, and her PhD in Computational Epidemiology from the Genetics, Bioinformatics and Computational Biology program at Virginia Tech. She also has an MS in Statistics and a BS in Mathematics. She is the founder of Rethé –  an initiative focused on providing scientific writing tools and resources to student communities in Africa in order to increase representation in scientific publications. She has written for NPR, The Conversation, Public Health Post and Quartz. Dr. Nsoesie was born and raised in Cameroon.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/speakers/sherri_rose.png" width="100%" class="img-thumbnail" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h3>
+                <a href="speaker_3.html" class="main-title">
+                  Machine Learning in Health Care: Too Important to Be a Toy Example
+                </a>
+              </h3>
+            </div>
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Sherri Rose  /  Harvard Medical School
+              </span>
+            </div>
+            <div class="m-3">
+              Sherri Rose, Ph.D. is an Associate Professor of Health Care Policy at Harvard Medical School and Co-Director of the Health Policy Data Science Lab. Her research in health policy focuses on risk adjustment, comparative effectiveness, and health program evaluation. Dr. Rose coauthored the first book on machine learning for causal inference and has published work across fields, including in Biometrics, JASA, PMLR,Journal of Health Economics, and NEJM. She currently serves as co-editor of the journal Biostatistics and is Chair-Elect of the American Statistical Association’s Biometrics Section. Her honors include the ISPOR Bernie J. O’Brien New Investigator Award for exceptional early career work in health economics and outcomes research and an NIH Director’s New Innovator Award to develop machine learning estimators for generalizability in health policy.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/speakers/ruslan_salakhutdinov.png" width="100%" class="img-thumbnail" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h3>
+                <a href="speaker_4.html" class="main-title">
+                  Title to be confirmed
+                </a>
+              </h3>
+            </div>
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Ruslan Salakhutdinov  /  Carnegie Mellon University
+              </span>
+            </div>
+            <div class="m-3">
+              Dr. Ruslan Salakhutdinov is a UPMC professor of Computer Science at Carnegie Mellon University. He has served as an area chair for NIPS, ICML, CVPR, and ICLR. He holds a PhD from University of Toronto and completed postdoctoral training at Massachusetts Institute of Technology.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/speakers/nigam_shah.png" width="100%" class="img-thumbnail" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h3>
+                <a href="speaker_5.html" class="main-title">
+                  A framework for shaping the future of AI in healthcare
+                </a>
+              </h3>
+            </div>
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Nigam Shah  /  Stanford University
+              </span>
+            </div>
+            <div class="m-3">
+              Dr. Nigam Shah is Associate Professor of Medicine (Biomedical Informatics) at Stanford University, and serves as the Associate CIO for Data Science for Stanford Health Care. Dr. Shah’s research focuses on combining machine learning and prior knowledge in medical ontologies to enable the learning health system. Dr. Shah was elected into the American College of Medical Informatics (ACMI) in 2015 and is inducted into the American Society for Clinical Investigation (ASCI) in 2016. He holds an MBBS from Baroda Medical College, India, a PhD from Penn State University and completed postdoctoral training at Stanford University.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      lazyLoader();
+    </script>
+  </div>
+
+  <!-- Thursday Tab -->
+  <div
+    class="tab-pane fade"
+    id="tab-thu"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    <div id="thu">
+      <!-- Speakers -->
+      <div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Thursday</h2>
+  </div>
+</div>
+
+      <div class="speakers">
+        <div class="cards row">
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Time</th>
+      <th scope="col">Type</th>
+      <th scope="col">Title</th>
+      <th scope="col">Speaker</th>
+      <th scope="col">Moderator</th>
+      <th scope="col">Session link</th>
+    </tr>
+  </thead>
+    <tbody>
+    
+    <tr>
+      <td>10:00 AM - 10:50 AM</td>
+      <td>Tutorial</td>
+      <td>
+          A Tour of Survival Analysis, from Classical to Modern
+          </td>
+      <td>George H. Chen, Jeremy C. Weiss</td>
+      <td>Irene Chen</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>10:00 AM - 10:50 AM</td>
+      <td>Tutorial</td>
+      <td>
+          Medical Imaging with Deep Learning
+          </td>
+      <td>Joseph Paul Cohen</td>
+      <td>Irene Chen</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>10:00 AM - 10:50 AM</td>
+      <td>Tutorial</td>
+      <td>
+          Public Health Datasets for Deep Learning: Challenges and Opportunities 
+          </td>
+      <td>Ziad Obermeyer, Katy Haynes, Josh Risley</td>
+      <td>Irene Chen</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td></td>
+      <td>
+          
+          </td>
+      <td></td>
+      <td></td>
+      <td>
+          
+          </td>
+    </tr>
+
+    <tr>
+      <td>11:00 AM - 11:10 AM</td>
+      <td>Introduction</td>
+      <td>
+          Opening Remarks
+          </td>
+      <td>Marzyeh Ghassemi</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>11:10 AM - 11:30 AM</td>
+      <td>Keynote</td>
+      <td>
+          Machine Learning Challenges in the Fight for Social Good - the Covid-19 Case
+          </td>
+      <td>Yoshua Bengio</td>
+      <td>Tristan Naumann</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>11:30 AM - 11:35 AM</td>
+      <td>Research Talk</td>
+      <td>
+          Defining Admissible Rewards for High-Confidence Policy Evaluation in Batch Reinforcement Learning
+          </td>
+      <td>Niranjani Prasad</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>11:35 AM - 11:40 AM</td>
+      <td>Research Talk</td>
+      <td>
+          Variational Learning of Individual Survival Distributions
+          </td>
+      <td>Zidi Xiu</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>11:40 AM - 11:45 AM</td>
+      <td>Research Talk</td>
+      <td>
+          Interpretable Subgroup Discovery in Treatment Effect Estimation with Application to Opioid Prescribing Guidelines
+          </td>
+      <td>Chirag Nagpal</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>11:45 AM - 11:50 AM</td>
+      <td>Research Talk</td>
+      <td>
+          Adverse Drug Reaction Discovery from Electronic Health Records with Deep Neural Networks
+          </td>
+      <td>Wei Zhang</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>11:50 AM - 11:55 AM</td>
+      <td>Research Talk</td>
+      <td>
+          CaliForest: Calibrated Random Forest for Health Data
+          </td>
+      <td>Yubin Park</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>11:55 AM - 12:00 PM</td>
+      <td>Research Talk</td>
+      <td>
+          BMM-Net: Automatic Segmentation of Edema in Optical Coherence Tomography Based on Boundary Detection and Multi-Scale Network
+          </td>
+      <td>Ruru Zhang</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td></td>
+      <td>
+          
+          </td>
+      <td></td>
+      <td></td>
+      <td>
+          
+          </td>
+    </tr>
+
+    <tr>
+      <td>12:00 PM - 1:00 PM</td>
+      <td>Social Lunch</td>
+      <td>
+          Social Lunch
+          </td>
+      <td>N/A</td>
+      <td>Irene Chen</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td></td>
+      <td>
+          
+          </td>
+      <td></td>
+      <td></td>
+      <td>
+          
+          </td>
+    </tr>
+
+    <tr>
+      <td>1:00 PM - 1:10 PM </td>
+      <td>Introduction</td>
+      <td>
+          Welcome Back
+          </td>
+      <td>Marzyeh Ghassemi</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>1:10 PM - 1:15 PM</td>
+      <td>Research Talk</td>
+      <td>
+          Survival Cluster Analysis
+          </td>
+      <td>Paidamoyo Chapfuwa</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>1:15 PM - 1:20 PM </td>
+      <td>Research Talk</td>
+      <td>
+          An Adversarial Approach for the Robust Classification of Pneumonia from Chest Radiographs
+          </td>
+      <td>Joseph D. Janizek</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>1:20 PM - 1:25 PM </td>
+      <td>Research Talk</td>
+      <td>
+          Explaining an increase in predicted risk for clinical alerts
+          </td>
+      <td>Michaela Hardt</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>1:25 PM - 1:30 PM</td>
+      <td>Research Talk</td>
+      <td>
+          Fast Learning-based Registration of Sparse 3D Clinical Images
+          </td>
+      <td>Kathleen Lewis</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>1:30 PM - 1:35 PM </td>
+      <td>Research Talk</td>
+      <td>
+          Multiple Instance Learning for Predicting Necrotizing Enterocolitis in Premature Infants Using Microbiome Data
+          </td>
+      <td>Thomas Hooven</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>1:35 PM - 1:40 PM </td>
+      <td>Research Talk</td>
+      <td>
+          Hurtful Words: Quantifying Biases in Clinical Contextual Word Embeddings
+          </td>
+      <td>Haoran Zhang</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>1:40 PM - 2:00 PM</td>
+      <td>Keynote</td>
+      <td>
+          Digital Platforms &amp; Public Health in Africa
+          </td>
+      <td>Elaine Nsoesie</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>2:00 PM - 2:20 PM</td>
+      <td>Keynote</td>
+      <td>
+          A framework for shaping the future of AI in healthcare
+          </td>
+      <td>Nigam Shah</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>2:20 PM - 2:30 PM</td>
+      <td>Introduction</td>
+      <td>
+          Day 1 Closing Remarks
+          </td>
+      <td>Marzyeh Ghassemi</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+      </div>
+      <div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Highlighted Papers</h2>
+  </div>
+</div>
+      <div class="row my-auto mx-auto">
+  <div
+    id="carouselExample1"
+    class="carousel slide d-none d-md-block"
+    data-interval="false"
+  >
+    <div class="carousel-inner cards" role="listbox">
+      
+      
+      <div class="carousel-item  active">
+        
+        <div class="col-md-4 col-xs-6 fluid">
+          <div class="pp-card">
+            <div class="pp-card-header">
+              <a href="poster_3368555.3384450.html" class="text-muted">
+                <h5 class="card-title" align="center">
+                  Defining admissible rewards for high-confidence policy evaluation in batch reinforcement learning
+                </h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Niranjani Prasad,
+                
+                Barbara Engelhardt,
+                
+                Finale Doshi-Velez,
+                
+              </h6>
+              <center>
+                <img
+                  class="cards_img lazy-load-img"
+                  data-src="static/images/papers/3368555.3384450.png"
+                  width="80%"
+                />
+              </center>
+            </div>
+          </div>
+        </div>
+        
+      
+      
+        <div class="col-md-4 col-xs-6 fluid">
+          <div class="pp-card">
+            <div class="pp-card-header">
+              <a href="poster_3368555.3384459.html" class="text-muted">
+                <h5 class="card-title" align="center">
+                  Adverse drug reaction discovery from electronic health records with deep neural networks
+                </h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Wei Zhang,
+                
+                Zhaobin Kuang,
+                
+                Peggy Peissig,
+                
+                David Page,
+                
+              </h6>
+              <center>
+                <img
+                  class="cards_img lazy-load-img"
+                  data-src="static/images/papers/3368555.3384459.png"
+                  width="80%"
+                />
+              </center>
+            </div>
+          </div>
+        </div>
+        
+      
+      
+        <div class="col-md-4 col-xs-6 fluid">
+          <div class="pp-card">
+            <div class="pp-card-header">
+              <a href="poster_3368555.3384455.html" class="text-muted">
+                <h5 class="card-title" align="center">
+                  Deidentification of free-text medical records using pre-trained bidirectional transformers
+                </h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Alistair E. W. Johnson,
+                
+                Lucas Bulgarelli,
+                
+                Tom J. Pollard,
+                
+              </h6>
+              <center>
+                <img
+                  class="cards_img lazy-load-img"
+                  data-src="static/images/papers/3368555.3384455.png"
+                  width="80%"
+                />
+              </center>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      
+      
+      <div class="carousel-item ">
+        
+        <div class="col-md-4 col-xs-6 fluid">
+          <div class="pp-card">
+            <div class="pp-card-header">
+              <a href="poster_3368555.3384454.html" class="text-muted">
+                <h5 class="card-title" align="center">
+                  Variational learning of individual survival distributions
+                </h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Zidi Xiu,
+                
+                Chenyang Tao,
+                
+                Ricardo Henao,
+                
+              </h6>
+              <center>
+                <img
+                  class="cards_img lazy-load-img"
+                  data-src="static/images/papers/3368555.3384454.png"
+                  width="80%"
+                />
+              </center>
+            </div>
+          </div>
+        </div>
+        
+      
+      
+        <div class="col-md-4 col-xs-6 fluid">
+          <div class="pp-card">
+            <div class="pp-card-header">
+              <a href="poster_3368555.3384462.html" class="text-muted">
+                <h5 class="card-title" align="center">
+                  Fast learning-based registration of sparse 3D clinical images
+                </h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Kathleen Lewis,
+                
+                Natalia S. Rost,
+                
+                John Guttag,
+                
+                Adrian V. Dalca,
+                
+              </h6>
+              <center>
+                <img
+                  class="cards_img lazy-load-img"
+                  data-src="static/images/papers/3368555.3384462.png"
+                  width="80%"
+                />
+              </center>
+            </div>
+          </div>
+        </div>
+        
+      
+      
+        <div class="col-md-4 col-xs-6 fluid">
+          <div class="pp-card">
+            <div class="pp-card-header">
+              <a href="poster_3368555.3384456.html" class="text-muted">
+                <h5 class="card-title" align="center">
+                  Interpretable subgroup discovery in treatment effect estimation with application to opioid prescribing guidelines
+                </h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Chirag Nagpal,
+                
+                Dennis Wei,
+                
+                Bhanukiran Vinzamuri,
+                
+                Monica Shekhar,
+                
+                Sara E. Berger,
+                
+                Subhro Das,
+                
+                Kush R. Varshney,
+                
+              </h6>
+              <center>
+                <img
+                  class="cards_img lazy-load-img"
+                  data-src="static/images/papers/3368555.3384456.png"
+                  width="80%"
+                />
+              </center>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      
+      
+      <div class="carousel-item ">
+        
+        <div class="col-md-4 col-xs-6 fluid">
+          <div class="pp-card">
+            <div class="pp-card-header">
+              <a href="poster_3368555.3384465.html" class="text-muted">
+                <h5 class="card-title" align="center">
+                  Survival cluster analysis
+                </h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Paidamoyo Chapfuwa,
+                
+                Chunyuan Li,
+                
+                Nikhil Mehta,
+                
+                Lawrence Carin,
+                
+                Ricardo Henao,
+                
+              </h6>
+              <center>
+                <img
+                  class="cards_img lazy-load-img"
+                  data-src="static/images/papers/3368555.3384465.png"
+                  width="80%"
+                />
+              </center>
+            </div>
+          </div>
+        </div>
+        
+      
+      
+        <div class="col-md-4 col-xs-6 fluid">
+          <div class="pp-card">
+            <div class="pp-card-header">
+              <a href="poster_3368555.3384452.html" class="text-muted">
+                <h5 class="card-title" align="center">
+                  Interactive hybrid approach to combine machine and human intelligence for personalized rehabilitation assessment
+                </h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Min Hun Lee,
+                
+                Daniel P. Siewiorek,
+                
+                Asim Smailagic,
+                
+                Alexandre Bernardino,
+                
+                Sergi Bermúdez i Badia,
+                
+              </h6>
+              <center>
+                <img
+                  class="cards_img lazy-load-img"
+                  data-src="static/images/papers/3368555.3384452.png"
+                  width="80%"
+                />
+              </center>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      
+    </div>
+    <a
+      class="carousel-control-prev"
+      href="#carouselExample1"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carouselExample1"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+    </div>
+
+    <script type="text/javascript">
+      lazyLoader();
+    </script>
+  </div>
+
+  <!-- Friday Tab -->
+  <div
+    class="tab-pane fade"
+    id="tab-fri"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    <div id="fri">
+      <!-- Speakers -->
+      <div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Friday</h2>
+  </div>
+</div>
+
+      <div class="speakers">
+        <div class="cards row">
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Time</th>
+      <th scope="col">Type</th>
+      <th scope="col">Title</th>
+      <th scope="col">Speaker</th>
+      <th scope="col">Moderator</th>
+      <th scope="col">Session link</th>
+    </tr>
+  </thead>
+    <tbody>
+    
+    <tr>
+      <td>10:00 AM - 10:50 AM</td>
+      <td>Tutorial</td>
+      <td>
+          Population and public health: challenges and opportunities
+          </td>
+      <td>Vishwali Mhasawade, Yuan Zhao, Rumi Chunara</td>
+      <td>Irene Chen</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>10:00 AM - 10:50 AM</td>
+      <td>Tutorial</td>
+      <td>
+          Analyzing critical care data, from speculation to publication, starring MIMIC-IV
+          </td>
+      <td>Alistair Johnson</td>
+      <td>Irene Chen</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>11:00 AM - 11:10 AM</td>
+      <td>Introduction</td>
+      <td>
+          Opening Remarks
+          </td>
+      <td>Marzyeh Ghassemi</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>11:10 AM - 11:30 AM</td>
+      <td>Keynote</td>
+      <td>
+          Machine Learning in Health Care: Too Important to Be a Toy Example
+          </td>
+      <td>Sherri Rose</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>11:30 AM - 11:35 AM</td>
+      <td>Research Talk</td>
+      <td>
+          Disease State Prediction From Single-Cell Data Using Graph Attention Networks
+          </td>
+      <td>Neal Ravindra</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>11:35 AM - 11:40 AM</td>
+      <td>Research Talk</td>
+      <td>
+          Using SNOMED to Automate Clinical Concept Mapping
+          </td>
+      <td>Shaun Gupta</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>11:40 AM - 11:45 AM</td>
+      <td>Research Talk</td>
+      <td>
+          MMiDaS-AE: Multi-modal Missing Data aware Stacked Autoencoder for Biomedical Abstract Screening
+          </td>
+      <td>Eric W. Lee</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>11:45 AM - 11:50 AM</td>
+      <td>Research Talk</td>
+      <td>
+          Hidden Stratification Causes Clinically Meaningful Failures in Machine Learning for Medical Imaging
+          </td>
+      <td>Luke Oakden-Rayner</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>11:50 AM - 11:55 AM</td>
+      <td>Research Talk</td>
+      <td>
+          Interactive Hybrid Approach to Combine Human and Machine Intelligence for Personalized Rehabilitation Assessment
+          </td>
+      <td>Min Hun Lee</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>11:55 AM - 12:00 PM</td>
+      <td>Research Talk</td>
+      <td>
+          Extracting Medical Entities from Social Media
+          </td>
+      <td>Sanja Scepanovic</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>12:00 PM - 1:00 PM</td>
+      <td>Sponsor Lunch</td>
+      <td>
+          Sponsor Lunch
+          </td>
+      <td>N/A</td>
+      <td>Irene Chen</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>1:00 PM - 1:10 PM </td>
+      <td>Introduction</td>
+      <td>
+          Welcome Back
+          </td>
+      <td>Marzyeh Ghassemi</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>1:10 PM - 1:15 PM</td>
+      <td>Research Talk</td>
+      <td>
+          Population-aware Hierarchical Bayesian Domain Adaptation via Multi-component Invariant Learning
+          </td>
+      <td>Vishwali Mhasawade</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>1:15 PM - 1:20 PM </td>
+      <td>Research Talk</td>
+      <td>
+          TASTE: Temporal and Static Tensor Factorization for Phenotyping Electronic Health Records
+          </td>
+      <td>Ardavan Afshar</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>1:20 PM - 1:25 PM </td>
+      <td>Research Talk</td>
+      <td>
+          Analyzing the Role of Model Uncertainty for Electronic Health Records
+          </td>
+      <td>Michael W. Dusenberry</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>1:25 PM - 1:30 PM</td>
+      <td>Research Talk</td>
+      <td>
+          Deidentification of free-text medical records using pre-trained bidirectional transformers
+          </td>
+      <td>Alistair Johnson</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>1:30 PM - 1:35 PM </td>
+      <td>Research Talk</td>
+      <td>
+          MIMIC-Extract: A Data Extraction, Preprocessing, and Representation Pipeline for MIMIC-III
+          </td>
+      <td>Matthew B. A. McDermott</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>1:40 PM - 2:00 PM</td>
+      <td>Keynote</td>
+      <td>
+          TBD
+          </td>
+      <td>Ruslan Salakhutdinov</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+    <tr>
+      <td>2:00 PM - 2:20 PM</td>
+      <td>Introduction</td>
+      <td>
+          Day 2 Closing Remarks
+          </td>
+      <td>Marzyeh Ghassemi</td>
+      <td>TBD</td>
+      <td>
+          Coming soon
+          </td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+      </div>
+      <div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Highlighted Papers</h2>
+  </div>
+</div>
+      <div class="row my-auto mx-auto">
+  <div
+    id="carouselExample1"
+    class="carousel slide d-none d-md-block"
+    data-interval="false"
+  >
+    <div class="carousel-inner cards" role="listbox">
+      
+      
+      <div class="carousel-item  active">
+        
+        <div class="col-md-4 col-xs-6 fluid">
+          <div class="pp-card">
+            <div class="pp-card-header">
+              <a href="poster_3368555.3384450.html" class="text-muted">
+                <h5 class="card-title" align="center">
+                  Defining admissible rewards for high-confidence policy evaluation in batch reinforcement learning
+                </h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Niranjani Prasad,
+                
+                Barbara Engelhardt,
+                
+                Finale Doshi-Velez,
+                
+              </h6>
+              <center>
+                <img
+                  class="cards_img lazy-load-img"
+                  data-src="static/images/papers/3368555.3384450.png"
+                  width="80%"
+                />
+              </center>
+            </div>
+          </div>
+        </div>
+        
+      
+      
+        <div class="col-md-4 col-xs-6 fluid">
+          <div class="pp-card">
+            <div class="pp-card-header">
+              <a href="poster_3368555.3384459.html" class="text-muted">
+                <h5 class="card-title" align="center">
+                  Adverse drug reaction discovery from electronic health records with deep neural networks
+                </h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Wei Zhang,
+                
+                Zhaobin Kuang,
+                
+                Peggy Peissig,
+                
+                David Page,
+                
+              </h6>
+              <center>
+                <img
+                  class="cards_img lazy-load-img"
+                  data-src="static/images/papers/3368555.3384459.png"
+                  width="80%"
+                />
+              </center>
+            </div>
+          </div>
+        </div>
+        
+      
+      
+        <div class="col-md-4 col-xs-6 fluid">
+          <div class="pp-card">
+            <div class="pp-card-header">
+              <a href="poster_3368555.3384455.html" class="text-muted">
+                <h5 class="card-title" align="center">
+                  Deidentification of free-text medical records using pre-trained bidirectional transformers
+                </h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Alistair E. W. Johnson,
+                
+                Lucas Bulgarelli,
+                
+                Tom J. Pollard,
+                
+              </h6>
+              <center>
+                <img
+                  class="cards_img lazy-load-img"
+                  data-src="static/images/papers/3368555.3384455.png"
+                  width="80%"
+                />
+              </center>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      
+      
+      <div class="carousel-item ">
+        
+        <div class="col-md-4 col-xs-6 fluid">
+          <div class="pp-card">
+            <div class="pp-card-header">
+              <a href="poster_3368555.3384454.html" class="text-muted">
+                <h5 class="card-title" align="center">
+                  Variational learning of individual survival distributions
+                </h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Zidi Xiu,
+                
+                Chenyang Tao,
+                
+                Ricardo Henao,
+                
+              </h6>
+              <center>
+                <img
+                  class="cards_img lazy-load-img"
+                  data-src="static/images/papers/3368555.3384454.png"
+                  width="80%"
+                />
+              </center>
+            </div>
+          </div>
+        </div>
+        
+      
+      
+        <div class="col-md-4 col-xs-6 fluid">
+          <div class="pp-card">
+            <div class="pp-card-header">
+              <a href="poster_3368555.3384462.html" class="text-muted">
+                <h5 class="card-title" align="center">
+                  Fast learning-based registration of sparse 3D clinical images
+                </h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Kathleen Lewis,
+                
+                Natalia S. Rost,
+                
+                John Guttag,
+                
+                Adrian V. Dalca,
+                
+              </h6>
+              <center>
+                <img
+                  class="cards_img lazy-load-img"
+                  data-src="static/images/papers/3368555.3384462.png"
+                  width="80%"
+                />
+              </center>
+            </div>
+          </div>
+        </div>
+        
+      
+      
+        <div class="col-md-4 col-xs-6 fluid">
+          <div class="pp-card">
+            <div class="pp-card-header">
+              <a href="poster_3368555.3384456.html" class="text-muted">
+                <h5 class="card-title" align="center">
+                  Interpretable subgroup discovery in treatment effect estimation with application to opioid prescribing guidelines
+                </h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Chirag Nagpal,
+                
+                Dennis Wei,
+                
+                Bhanukiran Vinzamuri,
+                
+                Monica Shekhar,
+                
+                Sara E. Berger,
+                
+                Subhro Das,
+                
+                Kush R. Varshney,
+                
+              </h6>
+              <center>
+                <img
+                  class="cards_img lazy-load-img"
+                  data-src="static/images/papers/3368555.3384456.png"
+                  width="80%"
+                />
+              </center>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      
+      
+      <div class="carousel-item ">
+        
+        <div class="col-md-4 col-xs-6 fluid">
+          <div class="pp-card">
+            <div class="pp-card-header">
+              <a href="poster_3368555.3384465.html" class="text-muted">
+                <h5 class="card-title" align="center">
+                  Survival cluster analysis
+                </h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Paidamoyo Chapfuwa,
+                
+                Chunyuan Li,
+                
+                Nikhil Mehta,
+                
+                Lawrence Carin,
+                
+                Ricardo Henao,
+                
+              </h6>
+              <center>
+                <img
+                  class="cards_img lazy-load-img"
+                  data-src="static/images/papers/3368555.3384465.png"
+                  width="80%"
+                />
+              </center>
+            </div>
+          </div>
+        </div>
+        
+      
+      
+        <div class="col-md-4 col-xs-6 fluid">
+          <div class="pp-card">
+            <div class="pp-card-header">
+              <a href="poster_3368555.3384452.html" class="text-muted">
+                <h5 class="card-title" align="center">
+                  Interactive hybrid approach to combine machine and human intelligence for personalized rehabilitation assessment
+                </h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Min Hun Lee,
+                
+                Daniel P. Siewiorek,
+                
+                Asim Smailagic,
+                
+                Alexandre Bernardino,
+                
+                Sergi Bermúdez i Badia,
+                
+              </h6>
+              <center>
+                <img
+                  class="cards_img lazy-load-img"
+                  data-src="static/images/papers/3368555.3384452.png"
+                  width="80%"
+                />
+              </center>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      
+    </div>
+    <a
+      class="carousel-control-prev"
+      href="#carouselExample1"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carouselExample1"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+    </div>
+
+    <script type="text/javascript">
+      lazyLoader();
+    </script>
+  </div>
+
+<!-- Recommended viewing schedule tab -->
+  <div
+    class="tab-pane fade"
+    id="tab-preview"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    <div id="preview">
+      <!-- Speakers -->
+      <div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Recommended viewing</h2>
+  </div>
+</div>
+
+    <p>The following talks have been pre-recorded. To get the most out of the live sessions, we recommend that you watch them in advance.</p>
+
+    <div class="speakers">
+      
+
+<div class="row p-3">
+  <div class="bd-content">
+    <h3>Thursday</h3>
+  </div>
+</div>
+<div class="cards row">
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Time</th>
+      <th scope="col">Title</th>
+      <th scope="col">Link</th>
+    </tr>
+  </thead>
+    <tbody>
+    
+    <tr>
+      <td>10 min</td>
+      <td>Making the most of CHIL</td>
+      <td>Coming soon</td>
+    </tr>
+
+    <tr>
+      <td>20 min</td>
+      <td>Keynote: Yoshua Bengio</td>
+      <td>Coming soon</td>
+    </tr>
+
+    <tr>
+      <td>50 min</td>
+      <td>Research Paper Talks 1 - 6</td>
+      <td>Coming soon</td>
+    </tr>
+
+    <tr>
+      <td>50 min</td>
+      <td>Research Paper Talks 7 - 12</td>
+      <td>Coming soon</td>
+    </tr>
+
+    <tr>
+      <td>20 min</td>
+      <td>Keynote: Elaine Nsoesie</td>
+      <td>Coming soon</td>
+    </tr>
+
+    <tr>
+      <td>20 min</td>
+      <td>Keynote: Nigam Shah</td>
+      <td>Coming soon</td>
+    </tr>
+
+    <tr>
+      <td>40 min</td>
+      <td>Workshop Spotlights 1 - 13</td>
+      <td>Coming soon</td>
+    </tr>
+
+    <tr>
+      <td>30 min</td>
+      <td>Tutorial: Public Health Datasets for Deep Learning: Challenges and Opportunities.</td>
+      <td>Coming soon</td>
+    </tr>
+
+    <tr>
+      <td>30 min</td>
+      <td>Tutorial: A Tour of Survival Analysis, from Classical to Modern.</td>
+      <td>Coming soon</td>
+    </tr>
+
+    <tr>
+      <td>30 min</td>
+      <td>Tutorial: Medical Imaging with Deep Learning</td>
+      <td>Coming soon</td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+
+<div class="row p-3">
+  <div class="bd-content">
+    <h3>Friday</h3>
+  </div>
+</div>
+<div class="cards row">
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Time</th>
+      <th scope="col">Title</th>
+      <th scope="col">Link</th>
+    </tr>
+  </thead>
+    <tbody>
+    
+    <tr>
+      <td>20 min</td>
+      <td>Keynote: Sherri Rose</td>
+      <td>Coming soon</td>
+    </tr>
+
+    <tr>
+      <td>50 min</td>
+      <td>Research Paper Talks 13 - 18</td>
+      <td>Coming soon</td>
+    </tr>
+
+    <tr>
+      <td>50 min</td>
+      <td>Research Paper Talks 19 - 23</td>
+      <td>Coming soon</td>
+    </tr>
+
+    <tr>
+      <td>20 min</td>
+      <td>Keynote: Ruslan Salakhutdinov</td>
+      <td>Coming soon</td>
+    </tr>
+
+    <tr>
+      <td>40 min</td>
+      <td>Workshop Spotlights 14 - 26</td>
+      <td>Coming soon</td>
+    </tr>
+
+    <tr>
+      <td>30 min</td>
+      <td>Tutorial: Analyzing critical care data, from speculation to publication, starring MIMIC-IV.</td>
+      <td>Coming soon</td>
+    </tr>
+
+    <tr>
+      <td>30 min</td>
+      <td>Tutorial: Population and public health: challenges and opportunities.</td>
+      <td>Coming soon</td>
+    </tr>
+
+    <tr>
+      <td>30 min</td>
+      <td>Doctoral Symposium.</td>
+      <td>Coming soon</td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+      lazyLoader();
+    </script>
+  </div>
+
+<!-- Tutorials -->
+  <div
+    class="tab-pane fade"
+    id="tab-tutorial"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    <div id="tutorial">
+      <!-- Speakers -->
+      <div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Tutorials</h2>
+  </div>
+</div>
+
+    <div class="speakers">
+      <div class="cards row">
+  
+  <div class="col-md-6 col-sm-12 p-3" style="box-sizing: border-box;">
+    <div class="card" style="display: block; overflow: hidden; width: 100%;">
+      <div
+        class="card-header text-center"
+        style="min-height: 200px; width: 100%;"
+      >
+        <a class="text-muted" href="tutorial_a.html">
+          <h3 class="card-title main-title">
+            A Tour of Survival Analysis, from Classical to Modern
+          </h3>
+        </a>
+        <div class="card-subtitle text-muted">
+          George H. Chen, Jeremy C. Weiss
+        </div>
+        <div class="m-3 text-left card-subtitle font-italic">
+          Survival analysis is used for predicting time-to-event outcomes, such as how long a patient will stay in the hospital, or when the recurrence of a tumor will likely happen. This tutorial aims to go over the basics of survival analysis, how it is used in healthcare, and some of its recent methodological advances from the ML community. We will also discuss open challenges.
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3" style="box-sizing: border-box;">
+    <div class="card" style="display: block; overflow: hidden; width: 100%;">
+      <div
+        class="card-header text-center"
+        style="min-height: 200px; width: 100%;"
+      >
+        <a class="text-muted" href="tutorial_b.html">
+          <h3 class="card-title main-title">
+            Population and public health: challenges and opportunities
+          </h3>
+        </a>
+        <div class="card-subtitle text-muted">
+          Vishwali Mhasawade, Yuan Zhao, Rumi Chunara
+        </div>
+        <div class="m-3 text-left card-subtitle font-italic">
+          In this tutorial, we will describe population and public health and their essential role in a comprehensive strategy to improve health. We will illustrate state of the art data and modeling approaches in population and public health. In doing so, we will identify overlaps with and open questions relevant to machine learning, causal inference and fairness.
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3" style="box-sizing: border-box;">
+    <div class="card" style="display: block; overflow: hidden; width: 100%;">
+      <div
+        class="card-header text-center"
+        style="min-height: 200px; width: 100%;"
+      >
+        <a class="text-muted" href="tutorial_c.html">
+          <h3 class="card-title main-title">
+            Public Health Datasets for Deep Learning: Challenges and Opportunities
+          </h3>
+        </a>
+        <div class="card-subtitle text-muted">
+          Ziad Obermeyer, Katy Haynes, Josh Risley
+        </div>
+        <div class="m-3 text-left card-subtitle font-italic">
+          With today’s publicly available, de-identified clinical datasets, it is possible to ask questions  like, “Can an algorithm read an electrocardiogram as well as a cardiologist can?” However, other kinds of questions like, “Does this ECG relate to a later cardiac arrest?” can’t be answered with the limited public data available to us today. Research using private datasets gives us reason to be optimistic, but progress will be slow unless suitable de-identified datasets become open, allowing researchers to efficiently collaborate and compete. Learn about an effort underway at the University of Chicago, led by Ziad Obermeyer, Sendhil Mullainathan, and their team, to provide a secure and public “ImageNet for clinical data” that balances the concerns of patients, healthcare institutions, and researchers.
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3" style="box-sizing: border-box;">
+    <div class="card" style="display: block; overflow: hidden; width: 100%;">
+      <div
+        class="card-header text-center"
+        style="min-height: 200px; width: 100%;"
+      >
+        <a class="text-muted" href="tutorial_d.html">
+          <h3 class="card-title main-title">
+            Analyzing critical care data, from speculation to publication, starring MIMIC-IV
+          </h3>
+        </a>
+        <div class="card-subtitle text-muted">
+          Alistair Johnson
+        </div>
+        <div class="m-3 text-left card-subtitle font-italic">
+          Despite a wealth of data, only a small fraction of decisions in critical care are evidence based. In this tutorial we will start with the conception of an idea, solidify the hypothesis, operationalize the concepts involved, and execute the study in a reproducible and communicable fashion. We will run our study on MIMIC-IV, an update to MIMIC-III, and cover some of the exciting additions in the new database. This tutorial will be interactive and result in a study performed end-to-end in a Jupyter notebook. Technical expertise is not required, as we will form groups based on skill level.
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3" style="box-sizing: border-box;">
+    <div class="card" style="display: block; overflow: hidden; width: 100%;">
+      <div
+        class="card-header text-center"
+        style="min-height: 200px; width: 100%;"
+      >
+        <a class="text-muted" href="tutorial_e.html">
+          <h3 class="card-title main-title">
+            Medical Imaging with Deep Learning
+          </h3>
+        </a>
+        <div class="card-subtitle text-muted">
+          Joseph Paul Cohen
+        </div>
+        <div class="m-3 text-left card-subtitle font-italic">
+          This tutorial will be styled as a graduate lecture about medical imaging with deep learning. This will cover the background of popular medical image domains (chest X-ray and histology) as well as methods to tackle multi-modality/view, segmentation, and counting tasks. These methods will be covered in terms of architecture and objective function design. Also, a discussion about incorrect feature attribution and approaches to mitigate the issue. Prerequisites: basic knowledge of computer vision (CNNs) and machine learning (regression, gradient descent).
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+      lazyLoader();
+    </script>
+  </div>
+
+<!-- Workshops -->
+  <div
+    class="tab-pane fade"
+    id="tab-workshop"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    <div id="workshop">
+      <!-- Speakers -->
+      <div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Workshops</h2>
+  </div>
+</div>
+
+    <div class="speakers">
+      <div class="cards row">
+  
+  <div class="col-md-6 col-sm-12 p-3" style="box-sizing: border-box;">
+    <div class="card" style="display: block; overflow: hidden; width: 100%;">
+      <div
+        class="card-header text-center"
+        style="min-height: 200px; width: 100%;"
+      >
+        <a class="text-muted" href="tutorial_a.html">
+          <h3 class="card-title main-title">
+            Test
+          </h3>
+        </a>
+        <div class="card-subtitle text-muted">
+          John Doe
+        </div>
+        <div class="m-3 text-left card-subtitle font-italic">
+          Test 2
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+      lazyLoader();
+    </script>
+  </div>
+
+<!-- Doctoral Symposium -->
+  <div
+    class="tab-pane fade"
+    id="tab-ds"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    <div id="ds">
+      <div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Doctoral Symposium</h2>
+  </div>
+</div>
+
+    <div class="speakers">
+      <div class="cards row">
+  
+  <div class="col-md-6 col-sm-12 p-3" style="box-sizing: border-box;">
+    <div class="card" style="display: block; overflow: hidden; width: 100%;">
+      <div
+        class="card-header text-center"
+        style="min-height: 200px; width: 100%;"
+      >
+        <a class="text-muted" href="tutorial_a.html">
+          <h3 class="card-title main-title">
+            Test DS
+          </h3>
+        </a>
+        <div class="card-subtitle text-muted">
+          John Doe
+        </div>
+        <div class="m-3 text-left card-subtitle font-italic">
+          Test 2
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+      lazyLoader();
+    </script>
+  </div>
+
+</div>
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Sponsors</h2>
+  </div>
+</div>
+
+<img width="2500" height="778" src="static/images/sponsors/sponsor_logos_chil1.png" class="image attachment-full size-full" alt="" style="max-width: 100%; height: auto;" title="Sponsors" srcset="static/images/sponsors/sponsor_logos_chil1.png 2500w, static/images/sponsors/sponsor_logos_chil1-300x93.png 300w, static/images/sponsors/sponsor_logos_chil1-768x239.png 768w, static/images/sponsors/sponsor_logos_chil1-1024x319.png 1024w, static/images/sponsors/sponsor_logos_chil1-600x187.png 600w" sizes="(max-width: 2500px) 100vw, 2500px" />
+
+      </div>
+
+      <div class="container p-5">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-left">© 2020 ACM-CHIL Organization Committee</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>
